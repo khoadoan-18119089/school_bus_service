@@ -57,7 +57,7 @@ extension PageRoute on Routes {
     return CusPageRoute(
       axisDirection: AxisDirection.left,
       settings: settings,
-      builder: (_) => const HomeScreen(),
+      builder: (_) => HomeScreen(),
     );
   }
 

@@ -12,9 +12,9 @@ import 'package:school_bus_service/screens/home/components/home_bottom_nav.dart'
 import 'package:school_bus_service/screens/home/components/home_page_view.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
-  List<BottomNavBTN> get _tabs => [
+  final List<BottomNavBTN> _tabs = [
         BottomNavBTN(
           MyIcons.calendar,
           view: Views.calendar,
@@ -48,18 +48,18 @@ class HomeScreen extends StatelessWidget {
       body: BlocProvider(
         create: (context) =>
             HomeBloc(_tabs)..add(InitHome(initView: _tabs.first.view)),
-        child: Stack(
-          children: [
-            HomePageView(),
-            Builder(
-              builder: (context) {
-                return HomeBottomNav(
+        child: Builder(
+          builder: (context) {
+            return Stack(
+              children: [
+                HomePageView(),
+                HomeBottomNav(
                   onPressed: (view) =>
                       context.read<HomeBloc>().add(ChangeTab(view)),
-                );
-              },
-            ),
-          ],
+                ),
+              ],
+            );
+          },
         ),
       ),
       floatingActionButton: Column(
