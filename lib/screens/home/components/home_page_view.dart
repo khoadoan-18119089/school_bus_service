@@ -17,7 +17,7 @@ class HomePageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, List<Widget>>(
+    return BlocBuilder<HomeBloc, List<ValueNotifier<Widget>>>(
       builder: (context, views) {
         context.read<HomeBloc>().animateToPage(_animateToPage);
         return PageView.builder(
@@ -36,7 +36,7 @@ class HomePageView extends StatelessWidget {
 class _ViewTab extends StatefulWidget {
   const _ViewTab(this.view);
 
-  final Widget view;
+  final ValueNotifier<Widget> view;
 
   @override
   State<_ViewTab> createState() => __ViewTabState();
@@ -50,6 +50,11 @@ class __ViewTabState extends State<_ViewTab>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return widget.view;
+    return ValueListenableBuilder(
+      valueListenable: widget.view,
+      builder: (_, view, __) {
+        return view;
+      },
+    );
   }
 }

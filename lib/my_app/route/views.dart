@@ -8,11 +8,12 @@ enum Views {
   // otp,
   // home,
   calendar,
-  // bookTheCar,
-  // blog,
-  // contact,
+  bookTheCar,
+  blog,
+  
   // account,
-  // transactionHistories,
+  history,
+  contact,
   ;
 
   String get path => '/$name';

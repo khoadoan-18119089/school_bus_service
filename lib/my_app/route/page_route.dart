@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:school_bus_service/my_app/route/cus_page_route.dart';
 import 'package:school_bus_service/my_app/route/routes.dart';
-import 'package:school_bus_service/screens/calendar/calendar_screen.dart';
+import 'package:school_bus_service/screens/blog/blog_screen.dart';
+import 'package:school_bus_service/screens/book_the_car/book_the_car_screen.dart';
+import 'package:school_bus_service/screens/calendar/components/calendar_screen.dart';
+import 'package:school_bus_service/screens/contact/contact_screen.dart';
+import 'package:school_bus_service/screens/history/history_screen.dart';
 import 'package:school_bus_service/screens/home/home_screen.dart';
 import 'package:school_bus_service/screens/review/review_screen.dart';
 import 'package:school_bus_service/screens/sign_in/sign_in_screen.dart';
@@ -83,29 +87,21 @@ extension PageRoute on Routes {
     );
   }
 
-  // Route<dynamic> bookTheCar(RouteSettings settings) {
-  //   return CusPageRoute(
-  //     settings: settings,
-  //     axisDirection: AxisDirection.left,
-  //     builder: (_) => const BookTheCarScreen(),
-  //   );
-  // }
+  Route<dynamic> bookTheCar(RouteSettings settings) {
+    return CusPageRoute(
+      settings: settings,
+      axisDirection: AxisDirection.left,
+      builder: (_) => const BookTheCarScreen(),
+    );
+  }
 
-  // Route<dynamic> blog(RouteSettings settings) {
-  //   return CusPageRoute(
-  //     settings: settings,
-  //     axisDirection: AxisDirection.left,
-  //     builder: (_) => const BlogScreen(),
-  //   );
-  // }
-
-  // Route<dynamic> contact(RouteSettings settings) {
-  //   return CusPageRoute(
-  //     settings: settings,
-  //     axisDirection: AxisDirection.left,
-  //     builder: (_) => const ContactScreen(),
-  //   );
-  // }
+  Route<dynamic> blog(RouteSettings settings) {
+    return CusPageRoute(
+      settings: settings,
+      axisDirection: AxisDirection.left,
+      builder: (_) => const BlogScreen(),
+    );
+  }
 
   // Route<dynamic> account(RouteSettings settings) {
   //   return CusPageRoute(
@@ -115,11 +111,19 @@ extension PageRoute on Routes {
   //   );
   // }
 
-  // Route<dynamic> transactionHistories(RouteSettings settings) {
-  //   return CusPageRoute(
-  //     settings: settings,
-  //     axisDirection: AxisDirection.left,
-  //     builder: (_) => const TransactionHistoriesScreen(),
-  //   );
-  // }
+  Route<dynamic> history(RouteSettings settings) {
+    return CusPageRoute(
+      settings: settings,
+      axisDirection: AxisDirection.left,
+      builder: (_) => const HistoryScreen(),
+    );
+  }
+
+  Route<dynamic> contact(RouteSettings settings) {
+    return CusPageRoute(
+      settings: settings,
+      axisDirection: AxisDirection.left,
+      builder: (_) => const ContactScreen(),
+    );
+  }
 }

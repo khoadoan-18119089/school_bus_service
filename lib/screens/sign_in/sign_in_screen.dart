@@ -107,7 +107,7 @@ class SignInScreen extends StatelessWidget {
         children: [
           CusText.titleMedium(DateTime.now().toBuoi()),
           CusText.titleLarge(MyApp.pref.userName),
-          CusText.titleSmall(('0379683482').hintPhoneNumber()),
+          CusText.titleSmall(MyApp.pref.phomeNumber.hintPhoneNumber()),
           const SizedBox(height: 16),
           _password(),
           _forgetAndDiffirentAccount(),

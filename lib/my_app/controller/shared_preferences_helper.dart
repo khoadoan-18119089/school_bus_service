@@ -22,10 +22,10 @@ class SharedPreferencesHelper {
     }
   }
 
-  String? get phomeNumber => _prefs.getString(FieldName.phoneNumber);
+  String get phomeNumber => _prefs.getString(FieldName.phoneNumber) ?? '0379683482';
 
-  set phoneNumber(String? phone) {
-    _prefs.setString(FieldName.phoneNumber, phone.toString());
+  set phoneNumber(String phone) {
+    _prefs.setString(FieldName.phoneNumber, phone);
   }
 
   String get userName =>

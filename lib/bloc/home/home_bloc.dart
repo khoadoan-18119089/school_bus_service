@@ -6,10 +6,10 @@ import 'package:school_bus_service/my_app/route/views.dart';
 
 part 'home_event.dart';
 
-class HomeBloc extends Bloc<HomeEvent, List<Widget>> {
+class HomeBloc extends Bloc<HomeEvent, List<ValueNotifier<Widget>>> {
   HomeBloc(List<BottomNavBTN> tabs)
       : super(
-          tabs.map((_) => _empty).toList(),
+          tabs.map((_) => ValueNotifier(_empty)).toList(),
         ) {
     _tabs = tabs;
     on<InitHome>(_onInit);
@@ -19,7 +19,7 @@ class HomeBloc extends Bloc<HomeEvent, List<Widget>> {
   late List<BottomNavBTN> _tabs;
   List<BottomNavBTN> get tabs => _tabs;
 
-  void _onInit(InitHome event, Emitter<List<Widget>> emit) {
+  void _onInit(InitHome event, Emitter<List<ValueNotifier<Widget>>> emit) {
     _changeView(event.initView, emit);
   }
 
@@ -30,17 +30,18 @@ class HomeBloc extends Bloc<HomeEvent, List<Widget>> {
     return index < 0 ? 0 : index;
   }
 
-  void _changeView(Views view, Emitter<List<Widget>> emit) {
+  void _changeView(Views view, Emitter<List<ValueNotifier<Widget>>> emit) {
     int index = _toIndex(view);
-    if (state[index] == _empty) {
-      state[index] = tabs[index].screen;
+    if (state[index].value == _empty) {
+      state[index].value = tabs[index].screen;
       emit(state);
     }
+    
   }
 
   late void Function(int) _animateToPage;
 
-  void _changeTab(ChangeTab event, Emitter<List<Widget>> emit) {
+  void _changeTab(ChangeTab event, Emitter<List<ValueNotifier<Widget>>> emit) {
     Views view = event.changeView;
     int index = _toIndex(view);
     _changeView(view, emit);

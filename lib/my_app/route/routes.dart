@@ -29,16 +29,17 @@ class Routes {
       //   return home(settings);
       case Views.calendar:
         return calendar(settings);
-      // case Views.bookTheCar:
-      //   return bookTheCar(settings);
-      // case Views.blog:
-      //   return blog(settings);
-      // case Views.contact:
-      //   return contact(settings);
+      case Views.bookTheCar:
+        return bookTheCar(settings);
+      case Views.blog:
+        return blog(settings);
+
       // case Views.account:
       //   return account(settings);
-      // case Views.transactionHistories:
-      //   return transactionHistories(settings);
+      case Views.history:
+        return history(settings);
+      case Views.contact:
+        return contact(settings);
     }
   }
 }

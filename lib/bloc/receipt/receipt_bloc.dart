@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:school_bus_service/models/receipt_model.dart';
 
 part 'receipt_event.dart';
 part 'receipt_state.dart';
@@ -9,27 +10,27 @@ class ReceiptBloc extends Bloc<ReceiptEvent, ReceiptState> {
     on<LoadReceiptEvent>((event, emit) async {
       emit(ReceiptLoadingState());
       try {
-        data = await _repository();
-        emit(ReceiptLoadedState(data));
+        _data = await _repository();
+        emit(ReceiptLoadedState(_data));
       } catch (error) {
         emit(ReceiptErrorState(error.toString()));
       }
     });
     on<SearchReceiptEvent>((event, emit) {
       if (event.code.isEmpty) {
-        emit(ReceiptLoadedState(data));
+        emit(ReceiptLoadedState(_data));
       } else {
-        // List<Map<String, Object?>?> temp = data
-        //     .where(
-        //       (e) => ReceiptModel(e).codeReceipt.startsWith(event.code),
-        //     )
-        //     .toList();
-        // emit(ReceiptLoadedState(temp));
+        List<Map<String, Object?>?> temp = _data
+            .where(
+              (e) => ReceiptModel(e).codeReceipt.startsWith(event.code),
+            )
+            .toList();
+        emit(ReceiptLoadedState(temp));
       }
     });
   }
 
-  List<Map<String, Object?>?> data = [];
+  List<Map<String, Object?>?> _data = [];
 
   Future<List<Map<String, Object?>?>> _repository() async {
     await Future.delayed(const Duration(seconds: 5));

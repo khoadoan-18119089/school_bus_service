@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:school_bus_service/models/blog_model.dart';
 
 part 'blog_event.dart';
 part 'blog_state.dart';

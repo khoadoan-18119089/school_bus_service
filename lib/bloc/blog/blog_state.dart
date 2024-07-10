@@ -17,7 +17,7 @@ class BlogLoadedState extends BlogState {
   @override
   List<Object?> get props => [data];
 
-  // List<BlogModel> get models => data.map((e) => BlogModel(e)).toList();
+  List<BlogModel> get models => data.map((e) => BlogModel(e)).toList();
 }
 
 class BlogErrorState extends BlogState {

@@ -17,7 +17,7 @@ class ReceiptLoadedState extends ReceiptState {
   @override
   List<Object?> get props => [data];
 
-  // List<ReceiptModel> get models => data.map((e) => ReceiptModel(e)).toList();
+  List<ReceiptModel> get models => data.map((e) => ReceiptModel(e)).toList();
 }
 
 class ReceiptErrorState extends ReceiptState {
