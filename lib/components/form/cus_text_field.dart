@@ -28,6 +28,7 @@ class CusTextField extends TextField {
     super.focusNode,
     super.textAlign,
     super.textInputAction,
+    super.obscureText,
   }) : super(
           style: TextStyle(
             fontSize: 20,

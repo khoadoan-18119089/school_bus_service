@@ -67,7 +67,7 @@ class SharedPreferencesHelper {
   }
 
   void autoLogin(BuildContext context) {
-    Views view = Views.review;
+    Views view = Views.onboarding;
     // if (phomeNumber != null && phomeNumber!.isNotEmpty) {
     //   if (loginDate != null) {
     //     int daysBetween = DateTime.now().difference(loginDate!).inDays;

@@ -23,7 +23,8 @@ class BlogCard extends HorizontalCard {
   Widget get headCard => Column(
         children: [
           CusImage.border(
-            'https://xeduadonhocsinh.com/wp-content/uploads/2021/03/56673162_2368054453423857_6772261435415199744_o-1024x683.jpg',
+            // 'https://xeduadonhocsinh.com/wp-content/uploads/2021/03/56673162_2368054453423857_6772261435415199744_o-1024x683.jpg',
+            'https://lh3.googleusercontent.com/a/ACg8ocKqi2O79oTg840_6X3y_foj2mALLts9XCDpP3kVqS5RzxHd090=s288-c-no',
             borderRadius: BorderRadius.circular(16.0),
             height: 102,
             width: 125,

@@ -78,7 +78,7 @@ class ContactScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const CusText.titleSmall('Message'),
+        const CusText.titleSmall('Message'),  
         const SizedBox(height: 8),
         CusTextFormField(
           formItem: FormItem(

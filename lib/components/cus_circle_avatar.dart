@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:school_bus_service/commom/icon.dart';
 import 'package:school_bus_service/components/cus_icon.dart';
-import 'package:school_bus_service/components/cus_image.dart';
-
 
 class CusCircleAvatar extends StatelessWidget {
   const CusCircleAvatar(
@@ -10,8 +8,8 @@ class CusCircleAvatar extends StatelessWidget {
     super.key,
     this.size = 80,
     this.circleBorderColor = Colors.blue,
-    this.backGroundColor = Colors.grey,
-    this.circleBorderWidth = 2.0,
+    this.backGroundColor = Colors.transparent,
+    this.circleBorderWidth = 3.0,
   });
 
   final String? avatar;
@@ -27,7 +25,7 @@ class CusCircleAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.all(2.5),
       clipBehavior: Clip.antiAlias,
       width: size,
       height: size,
@@ -45,9 +43,9 @@ class CusCircleAvatar extends StatelessWidget {
 
   Widget _image() {
     if (avatar != null && avatar!.isNotEmpty) {
-      return CusImage(
-        avatar!,
-        fit: BoxFit.contain,
+      return CircleAvatar(
+        backgroundImage: NetworkImage(avatar!),
+        radius: double.infinity,
       );
     } else {
       return CusIcon(icon: MyIcons.user);

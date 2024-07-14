@@ -25,28 +25,28 @@ extension MyAppTextStyle on MyAppTheme {
   TextStyle get _titleLarge => TextStyle(
         fontSize: 33,
         fontWeight: FontWeight.w700,
-        color: titleColor,
+        // color: titleColor,
         fontFamily: FontFamily.dancingScript.name,
       );
 
   TextStyle get _titleMedium => TextStyle(
         fontSize: 28,
         fontWeight: FontWeight.w700,
-        color: titleColor,
+        // color: titleColor,
         fontFamily: FontFamily.dancingScript.name,
       );
 
   TextStyle get _titleSmall => TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w700,
-        color: titleColor,
+        // color: titleColor,
         fontFamily: FontFamily.dancingScript.name,
       );
 
   TextStyle get _bodyMedium => TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w400,
-        color: bodyColor,
+        // color: bodyColor,
         fontFamily: FontFamily.inter.name,
         fontStyle: FontStyle.italic,
       );
@@ -54,7 +54,7 @@ extension MyAppTextStyle on MyAppTheme {
   TextStyle get _labelMedium => TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
-        color: labelColor,
+        // color: labelColor,
         fontFamily: FontFamily.inter.name,
         fontStyle: FontStyle.italic,
       );
@@ -62,7 +62,7 @@ extension MyAppTextStyle on MyAppTheme {
   TextStyle get _button => TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w700,
-        color: buttonColor,
+        // color: buttonColor,
         fontFamily: FontFamily.dancingScript.name,
       );
 

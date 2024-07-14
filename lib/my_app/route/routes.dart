@@ -15,12 +15,10 @@ class Routes {
         return unKnow(settings);
       case Views.splash:
         return splash(settings);
-      case Views.review:
-        return review(settings);
-      case Views.signIn:
-        return signIn(settings);
-      case Views.signUp:
-        return signUp(settings);
+      case Views.onboarding:
+        return onboarding(settings);
+      case Views.login:
+        return login(settings);
       case Views.home:
         return home(settings);
       // case Views.otp:
@@ -33,13 +31,12 @@ class Routes {
         return bookTheCar(settings);
       case Views.blog:
         return blog(settings);
-
-      // case Views.account:
-      //   return account(settings);
       case Views.history:
         return history(settings);
       case Views.contact:
         return contact(settings);
+      case Views.account:
+        return account(settings);
     }
   }
 }

@@ -28,12 +28,11 @@ class BottomNavBTN extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeIn,
           child: Stack(
-            alignment: Alignment.center,
             children: [
               if (view == selectView) ...[
                 Positioned(
-                  bottom: 9,
-                  left: 3,
+                  bottom: 5,
+                  left: 4,
                   child: CusIcon(
                     icon: icon,
                     size: 30,

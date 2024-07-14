@@ -4,7 +4,6 @@ import 'package:school_bus_service/commom/format.dart';
 import 'package:school_bus_service/components/cus_button.dart';
 import 'package:school_bus_service/components/cus_text.dart';
 
-
 class CountdownTimer extends StatefulWidget {
   const CountdownTimer({
     super.key,
@@ -25,7 +24,7 @@ class _CountdownTimerState extends State<CountdownTimer> {
 
   bool _isRunning = false;
 
-  Timer? _timer;
+  late Timer _timer;
 
   @override
   void initState() {
@@ -45,7 +44,7 @@ class _CountdownTimerState extends State<CountdownTimer> {
         } else {
           _duration = const Duration(seconds: 60);
           _isRunning = false;
-          _timer?.cancel();
+          _timer.cancel();
         }
       });
     });
@@ -78,9 +77,7 @@ class _CountdownTimerState extends State<CountdownTimer> {
 
   @override
   void dispose() {
-    if (_timer != null) {
-      _timer!.cancel();
-    }
+    _timer.cancel();
     super.dispose();
   }
 }

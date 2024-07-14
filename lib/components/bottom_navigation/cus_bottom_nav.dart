@@ -31,13 +31,14 @@ class CusBottomNav extends StatelessWidget {
       height: 60,
       margin: const EdgeInsets.all(16),
       width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade900,
-        borderRadius: const BorderRadius.all(Radius.circular(25)),
+      decoration: const BoxDecoration(
+        color: Colors.black87,
+        borderRadius: BorderRadius.all(Radius.circular(25)),
       ),
       child: BlocProvider(
         create: (_) => BottomNavBloc(items.first.view)..initFuncion(onPressed),
         child: Stack(
+          alignment: Alignment.center,
           children: [
             _childrenBottomNavBTN(),
             _showItem(),

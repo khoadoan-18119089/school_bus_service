@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:school_bus_service/bloc/home/home_bloc.dart';
+import 'package:school_bus_service/components/cus_page_view.dart';
 
 class HomePageView extends StatelessWidget {
   HomePageView({super.key});
@@ -20,7 +21,7 @@ class HomePageView extends StatelessWidget {
     return BlocBuilder<HomeBloc, List<ValueNotifier<Widget>>>(
       builder: (context, views) {
         context.read<HomeBloc>().animateToPage(_animateToPage);
-        return PageView.builder(
+        return CusPageView(
           controller: controller,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: views.length,

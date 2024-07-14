@@ -73,8 +73,8 @@ class CusButton extends StatelessWidget {
     required void Function()? onPressed,
   })  : _type = ButtonType.icon,
         _text = '',
-        _height = null,
-        _width = null,
+        _height = minSize,
+        _width = minSize,
         _disable = disable,
         _padding = padding,
         _margin = margin,
@@ -140,7 +140,10 @@ class CusButton extends StatelessWidget {
       style: Theme.of(context).textButtonTheme.style?.copyWith(
             padding: WidgetStateProperty.all<EdgeInsetsGeometry?>(_padding),
           ),
-      child: CusText.titleSmall(_text),
+      child: CusText.titleSmall(
+        _text,
+        color: _color,
+      ),
     );
   }
 

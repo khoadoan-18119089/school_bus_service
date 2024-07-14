@@ -8,6 +8,7 @@ import 'package:school_bus_service/components/bottom_navigation/bottom_nav_btn.d
 import 'package:school_bus_service/components/cus_button.dart';
 import 'package:school_bus_service/main.dart';
 import 'package:school_bus_service/my_app/route/views.dart';
+import 'package:school_bus_service/screens/account/account_screen.dart';
 import 'package:school_bus_service/screens/blog/blog_screen.dart';
 import 'package:school_bus_service/screens/book_the_car/book_the_car_screen.dart';
 import 'package:school_bus_service/screens/calendar/components/calendar_screen.dart';
@@ -41,8 +42,8 @@ class HomeScreen extends StatelessWidget {
     ),
     BottomNavBTN(
       MyIcons.user,
-      view: Views.unKnow,
-      screen: const Scaffold(),
+      view: Views.account,
+      screen: const AccountScreen(),
     ),
   ];
 

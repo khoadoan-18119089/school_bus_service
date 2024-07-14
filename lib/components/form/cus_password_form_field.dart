@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:school_bus_service/components/cus_button.dart';
+import 'package:school_bus_service/components/cus_icon.dart';
 import 'package:school_bus_service/components/form/cus_form_field.dart';
 import 'package:school_bus_service/components/form/cus_text_field.dart';
 import 'package:school_bus_service/components/form/form_item.dart/extension/format_ext.dart';
@@ -10,10 +12,20 @@ class CusPasswordFormField extends CusFormField<String> {
     Widget? prefixIcon,
     required super.formItem,
   }) : super(
-          builder: (field) {
+          builder: (formField) {
+            _CusPasswordFormFieldState field =
+                formField as _CusPasswordFormFieldState;
             return CusTextField(
               key: key,
+              obscureText: field.isObscure,
               prefixIcon: prefixIcon,
+              suffixIcon: CusButton.icon(
+                icon: CusIcon(
+                  icon:
+                      field.isObscure ? Icons.visibility : Icons.visibility_off,
+                ),
+                onPressed: field.show,
+              ),
               controller: field.textController,
               lable: formItem.lable,
               lableText: formItem.lableText,
@@ -31,6 +43,8 @@ class CusPasswordFormField extends CusFormField<String> {
 }
 
 class _CusPasswordFormFieldState extends CusFormFieldState<String> {
+  bool isObscure = true;
+
   @override
   void initState() {
     item.updateType(FormItemType.password);
@@ -41,5 +55,11 @@ class _CusPasswordFormFieldState extends CusFormFieldState<String> {
   @override
   void updateTextController() {
     textController.text = item.display(value);
+  }
+
+  void show() {
+    setState(() {
+      isObscure = !isObscure;
+    });
   }
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:school_bus_service/commom/field_name.dart';
-import 'package:school_bus_service/commom/lotties.dart';
+import 'package:school_bus_service/commom/format.dart';
 import 'package:school_bus_service/components/cus_button.dart';
-import 'package:school_bus_service/components/cus_wave_clipper.dart';
+import 'package:school_bus_service/components/cus_text.dart';
 import 'package:school_bus_service/components/form/cus_date_time_form_field.dart';
 import 'package:school_bus_service/components/form/cus_email_form_field.dart';
 import 'package:school_bus_service/components/form/cus_form.dart';
@@ -12,53 +11,34 @@ import 'package:school_bus_service/components/form/cus_phone_form_field.dart';
 import 'package:school_bus_service/components/form/cus_radio_form_field.dart';
 import 'package:school_bus_service/components/form/cus_text_form_field.dart';
 import 'package:school_bus_service/components/form/form_item.dart/form_item_model.dart';
-import 'package:school_bus_service/main.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: MyApp.unfocus,
-      child: Scaffold(
-        appBar: _appbar(),
-        body: CusForm(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Expanded(
-                  child: ListView.separated(
-                    separatorBuilder: (_, __) => const SizedBox(height: 16),
-                    itemCount: _list.length,
-                    itemBuilder: (_, index) {
-                      return _list[index];
-                    },
-                  ),
-                ),
-                const SizedBox(height: 16),
-                _xacNhan(),
-              ],
-            ),
-          ),
+    return CusForm(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            CusText.titleMedium(DateTime.now().toBuoi()),
+            const CusText.titleSmall('Hay tạo tài khoản của bạn nào!'),
+            const SizedBox(height: 16),
+            _userName(),
+            const SizedBox(height: 16),
+            _phone(),
+            const SizedBox(height: 16),
+            _email(),
+            const SizedBox(height: 16),
+            _birthAndGender(),
+            const SizedBox(height: 16),
+            _dangky(),
+          ],
         ),
       ),
     );
   }
-
-  CusWaveAppBar _appbar() {
-    return CusWaveAppBar(
-      image: LottieBuilder.asset(MyLotties.createAccount),
-    );
-  }
-
-  List<Widget> get _list => [
-        _userName(),
-        _phone(),
-        _email(),
-        _birthAndGender(),
-      ];
 
   Widget _userName() {
     return CusTextFormField(
@@ -124,29 +104,27 @@ class SignUpScreen extends StatelessWidget {
     return Row(
       children: [
         Flexible(
-          flex: 58,
+          flex: 55,
           child: _birth(),
         ),
         Flexible(
-          flex: 42,
+          flex: 45,
           child: _gender(),
         )
       ],
     );
   }
 
-  Widget _xacNhan() {
-    return Center(
-      child: CusFormSave(
-        builder: (context, canSave) {
-          return CusButton.elevated(
-            isExpanded: true,
-            // disable: !canSave,
-            text: 'Xác nhận',
-            onPressed: () {},
-          );
-        },
-      ),
+  Widget _dangky() {
+    return CusFormSave(
+      builder: (context, canSave) {
+        return CusButton.elevated(
+          isExpanded: true,
+          disable: !canSave,
+          text: 'Đăng ký',
+          onPressed: () {},
+        );
+      },
     );
   }
 }

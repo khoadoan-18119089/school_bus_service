@@ -6,4 +6,6 @@ class MyImages {
   static String pig = MyBase.getAssetsImage('pig');
 
   static String phone = MyBase.getAssetsImage('phone');
+
+  static String bgLogin = MyBase.getAssetsImage('bg1');
 }

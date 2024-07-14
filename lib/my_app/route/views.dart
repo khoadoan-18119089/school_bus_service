@@ -1,19 +1,16 @@
 enum Views {
   unKnow,
   splash,
-  review,
-  signIn,
-  signUp,
+  onboarding,
+  login,
   home,
   // otp,
-  // home,
   calendar,
   bookTheCar,
   blog,
-  
-  // account,
   history,
   contact,
+  account,
   ;
 
   String get path => '/$name';
