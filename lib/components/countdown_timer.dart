@@ -22,7 +22,7 @@ class CountdownTimer extends StatefulWidget {
 class _CountdownTimerState extends State<CountdownTimer> {
   Duration _duration = const Duration(seconds: 60);
 
-  bool _isRunning = false;
+  bool _isRunning = false;  
 
   late Timer _timer;
 
