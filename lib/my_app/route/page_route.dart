@@ -4,7 +4,7 @@ import 'package:school_bus_service/my_app/route/routes.dart';
 import 'package:school_bus_service/screens/account/account_screen.dart';
 import 'package:school_bus_service/screens/blog/blog_screen.dart';
 import 'package:school_bus_service/screens/book_the_car/book_the_car_screen.dart';
-import 'package:school_bus_service/screens/calendar/components/calendar_screen.dart';
+import 'package:school_bus_service/screens/calendar/calendar_screen.dart';
 import 'package:school_bus_service/screens/contact/contact_screen.dart';
 import 'package:school_bus_service/screens/history/history_screen.dart';
 import 'package:school_bus_service/screens/home/home_screen.dart';

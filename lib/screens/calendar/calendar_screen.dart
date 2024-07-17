@@ -7,7 +7,7 @@ import 'package:school_bus_service/components/form/cus_drop_dowm_form_field.dart
 import 'package:school_bus_service/components/form/form_item.dart/form_item_model.dart';
 import 'package:school_bus_service/models/calendar_model.dart';
 import 'package:school_bus_service/screens/calendar/components/calendar_card.dart';
-import 'package:school_bus_service/screens/calendar/skeleton_calendar_card.dart';
+import 'package:school_bus_service/screens/calendar/components/skeleton_calendar_card.dart';
 
 class CalendarScreen extends StatelessWidget{
   const CalendarScreen({super.key});

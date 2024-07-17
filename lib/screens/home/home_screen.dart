@@ -11,7 +11,7 @@ import 'package:school_bus_service/my_app/route/views.dart';
 import 'package:school_bus_service/screens/account/account_screen.dart';
 import 'package:school_bus_service/screens/blog/blog_screen.dart';
 import 'package:school_bus_service/screens/book_the_car/book_the_car_screen.dart';
-import 'package:school_bus_service/screens/calendar/components/calendar_screen.dart';
+import 'package:school_bus_service/screens/calendar/calendar_screen.dart';
 import 'package:school_bus_service/screens/history/history_screen.dart';
 import 'package:school_bus_service/screens/home/components/home_bottom_nav.dart';
 import 'package:school_bus_service/screens/home/components/home_page_view.dart';
