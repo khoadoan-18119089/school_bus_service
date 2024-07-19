@@ -18,7 +18,7 @@ class HistoryScreen extends StatelessWidget {
     return GestureDetector(
       onTap: MyApp.unfocus,
       child: BlocProvider(
-        create: (context) => ReceiptBloc()..add(LoadReceiptEvent()),
+        create: (context) => ReceiptBloc()..add(LoadReceiptEvent()), 
         child: Scaffold(
           body: _body(),
         ),
@@ -107,7 +107,7 @@ class HistoryScreen extends StatelessWidget {
           if (heightItem > height) {
             heightItem = height;
           }
-          int count = (height / heightItem).round();
+          int count = (height / heightItem).ceil();
           return ListView.separated(
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,

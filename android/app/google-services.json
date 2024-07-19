@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1034518356915",
+    "project_id": "school-bus-service-3e18d",
+    "storage_bucket": "school-bus-service-3e18d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034518356915:android:5865dce7d7cf3590aea1c6",
+        "android_client_info": {
+          "package_name": "com.a.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlP6xbBmbC_1qtiptB4eB8N48Z8cCCZsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

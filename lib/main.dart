@@ -1,14 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:school_bus_service/commom/local_data.dart';
+import 'package:school_bus_service/firebase_options.dart';
 import 'package:school_bus_service/my_app/controller/shared_preferences_helper.dart';
 import 'package:school_bus_service/my_app/route/routes.dart';
 import 'package:school_bus_service/my_app/route/views.dart';
 import 'package:school_bus_service/my_app/setting/my_app_theme.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,overlays: [SystemUiOverlay.bottom]);
   runApp(const MyApp());
 }
@@ -18,7 +23,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(  
       title: 'SBS',
       theme: _theme.myAppTheme,
       initialRoute: _routes.initialRoute,
